@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{box-sizing: border-box;
+    color: var(--font-color);
+}
+
+:root{
+    --bg-color: #000000;
+    --border: rgb(23, 3, 122);
+    --font-color: #ffffff;
+    --whatsapp-green: #13be5a;
+    --bg2-color: #010311;
+    --input-color:rgba(19, 19, 29, 0.862);
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: row-reverse;
+    border-bottom: var(--border) solid 2px;
+    width: 100%;
+    box-shadow: 1px 1px 4px 1px rgba(87, 194, 251, 0.222), 0 0px 20px 0 rgba(54, 198, 255, 0.19);
+    height: 13vh;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 5rem;
+}
+
+footer{
+    text-align: center;
+    color: var(--font-color);
+    padding-top: 5%;
+    margin-top: 10vh;
+}
+
+nav{
+    padding-top: 1.5%;
+    font-size: larger;
+    margin-right: 2rem;
+}
+
+#title{
+    margin-top: 2%;
+    width: 90%;
+    font-size: larger;
+}
+
+#services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap:1%
+}
+
+#contact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap:1%;
+    border-bottom: var(--border) solid 2px;
+     border-top: var(--border) solid 2px;
+    background-color: var(--bg2-color);
+    padding: 2rem;
+    height: auto;   
+}
+
+#about{
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    font-size: larger;
+    flex-direction: row;
+    border: var(--border) solid 1px;
+    border-radius: 15px;
+    padding: 2rem;
+}
+
+.image{
+    margin-right: 5%;
+    width: 100%;
+    height: 70vh;
+    border-radius: 10px;
+    border: var(--border) solid 1px;    
+    background-image: url(img/foto.jpg);
+    background-size: cover;
+    background-position: top;
+    user-select: none;
+    pointer-events: none;
+}
+
+#contact-text{
+    width:40%;
+    font-size: larger;
+    text-transform: uppercase;
+}
+
+#contact-text h5{
+    font-weight: 300;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 60%;
+    text-transform: uppercase;
+}
+
+
+
+input{
+    border-radius: 5px;
+    border: none;
+    padding-left: 0.5rem;
+    width: 90%;
+    height: 2rem;
+    background-color: var(--input-color);
+}
+
+textarea{
+    background-color: var(--input-color);
+    border-radius: 5px;
+    border: none;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+    width: 90%;
+    height: 5rem;
+    resize: none;
+}
+
+#submit{
+    width: 50%;
+    height: 2.5rem;
+    border: black solid 1px;
+    border-radius: 10px;
+    background-color: var(--border);
+    color: var(--font-color);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: medium;
+}   
+
+#submit:hover{
+    background-color: var(--bg-color);
+    border: white solid 1px;
+}
+
+#services h2{
+    font-size: xx-large;
+    text-transform: uppercase;
+}
+
+#whatsapp{
+    position:fixed;
+    bottom: 4%;
+    right: 2%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--whatsapp-green);
+    background-image: url(img/whatsapp.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#whatsapp:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap:2rem;
+}
+
+.card{
+    width: 40%;
+    height: 20vh;
+    padding-left: 1.3rem;
+    background-color: rgba(5, 26, 59, 0.243);
+    border-radius: 10px;
+    border: var(--border) solid 1px;
+    box-shadow: 1px 1px 4px 1px rgba(87, 194, 251, 0.222), 0 0px 20px 0 rgba(54, 198, 255, 0.19);
+}
+
+.card h2, .card p{
+    width: 100%;
+    max-width: 100%;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    transition: all 0.07s ease-in-out;
+}
+
+.links{
+    margin-left: 1rem;
+}
+
+.logo{
+    width:5vw;
+    margin-top: 0.2rem;
+    position: absolute;
+    left:1vw;
+}
+
+h1{
+    color: var(--font-color);
+    margin-left: 5rem;
+    margin-right: 1rem;
+    position: absolute;
+    left:3vw
+}
+
+a{
+    text-decoration: none;
+    color: var(--font-color);
+    margin:0.5rem;
+}
+
+.links:hover{
+    color: var(--border);
+}
+
+i{
+    transform: scale(1.5);
+}
+
+@media (max-width: 768px) {
+    .card-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 90%;
+    }
+
+    header{
+        justify-content: left;
+        height: auto;
+        padding-bottom: 4.5rem;
+    }
+
+    .logo{
+        margin-top:1.2rem;
+        width:15vw;
+        position: absolute;
+    }
+
+    h1{
+        position: absolute;
+        left:3vw;
+        margin-top: 3.4rem;
+        font-size: 1.4rem;
+    }
+
+    nav{
+        display: flex;
+        gap:2px;
+        flex-direction: row;
+        font-size: small;
+    }
+
+    #contact{
+        flex-direction: column;
+        height: auto;
+    }
+
+    #contact-text{
+        width: 90%;
+        text-align: center;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    footer{
+        padding-bottom: 3%;
+        width: 90%;
+    }
+
+    #whatsapp{
+        width: 60px;
+        height: 60px;
+        right:5%;
+        bottom:8%;
+    }
+
+    .links:hover{
+        color: white;
+    }
+
+    #about{
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        width: 90%;
+        border: var(--border) solid 1px;
+        border-radius: 15px;
+        padding: 2rem;
+        font-size: medium;
+    }
+
+    .image{
+        width: 90%;
+        height: 40vh;
+        margin-bottom: 2rem;
+    }
+
+}
