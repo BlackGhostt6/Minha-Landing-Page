@@ -2,6 +2,7 @@
 
 html{
     scroll-behavior: smooth;
+    scroll-padding: 16vh;
 }
 
 *{box-sizing: border-box;
@@ -25,16 +26,20 @@ body{
     align-items: center;
     width: 100%;
     margin: 0;
-    padding: 0;
+    padding-top: 13vh;
 }
 
 header{
     display: flex;
+    position: fixed;
+    top: 0;
     flex-direction: row-reverse;
     border-bottom: var(--border) solid 2px;
     width: 100%;
     box-shadow: 1px 1px 4px 1px rgba(87, 194, 251, 0.222), 0 0px 20px 0 rgba(54, 198, 255, 0.19);
     height: 13vh;
+    background-color: var(--bg-color);
+    z-index: 100;
 }
 
 main{
@@ -78,10 +83,10 @@ nav{
 }
 
 #title{
-    margin-top: 5%;
+    margin-top: 2%;
     width: 90%;
     font-size: larger;
-    margin-bottom: 7%;
+    margin-bottom: 10%;
 }
 
 #title h2{
@@ -247,6 +252,7 @@ textarea{
     border-radius: 10px;
     border: var(--border) solid 1px;
     box-shadow: 1px 1px 4px 1px rgba(87, 194, 251, 0.222), 0 0px 20px 0 rgba(54, 198, 255, 0.19);
+    z-index: 2;
 }
 
 .card h2, .card p{
@@ -257,6 +263,7 @@ textarea{
 .card:hover{
     transform: scale(1.05);
     transition: all 0.07s ease-in-out;
+    z-index: 2;
 }
 
 .links{
@@ -305,7 +312,9 @@ i{
         justify-content: left;
         height: auto;
         padding-bottom: 4.5rem;
+        width: 100%;
     }
+
 
     .logo{
         margin-top:1.2rem;
