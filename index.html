@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criação de páginas web</title>
+    <meta name="description" content="Destaque sua marca com sites e landing pages exclusivas. Design moderno, clean e totalmente personalizado para o seu negócio. Sites simples que entregam grandes experiências.">
+    <title>Gabriel Santiago | Desenvolvimento de sites e landing pages</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/Logo.png?" type="image/png">
     <script src="https://kit.fontawesome.com/a3a9f84800.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="cursor-light"></div>
     <header>
         <div class="logo">
             <a href="#title"><img src="img/Logo.png" alt="Logo de Gabriel Santiago" class="logo" ></a>
         </div>
-        <h1>Gabriel Santiago</h1>
+        <h1>Desenvolvedor Web</h1>
         <nav>
             <a class="links" href="#services">Serviços</a>
             <a class="links" href="#about">Sobre</a>
@@ -22,14 +24,17 @@
     </header>
     <main>
         <section id="title">
-            <h2>Bem-vindo ao meu portfólio!</h2>
-            <p>Olá! Meu nome é Gabriel Santiago, sou um desenvolvedor web apaixonado por criar soluções digitais inovadoras. Com habilidades em HTML, CSS, JavaScript e diversas outras tecnologias, estou sempre em busca de novos desafios para aprimorar minhas habilidades e entregar projetos de alta qualidade.</p>
-            <p>Navegue pelo meu site para conhecer meus serviços e saber mais sobre mim. Estou ansioso para colaborar com você em seu próximo projeto!</p>
+            <article>
+                <h2>Bem-vindo ao meu portfólio!</h2>
+                <p>Olá! Meu nome é Gabriel Santiago, sou um desenvolvedor web apaixonado por criar soluções digitais inovadoras. Com habilidades em HTML, CSS, JavaScript e diversas outras tecnologias, estou sempre em busca de novos desafios para aprimorar minhas habilidades e entregar projetos de alta qualidade.</p>
+                <p>Navegue pelo meu site para conhecer meus serviços e saber mais sobre mim. Estou ansioso para colaborar com você em seu próximo projeto!</p>
+            </article>
             <div class="icons">
                 <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="html5">
                 <img src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" alt="css3">
                 <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" alt="JavaScript">
             </div>
+            <button id="cta">Peça já seu orçamento!</button>
         </section>
         <section id="services">
             <h2>Serviços</h2>
@@ -38,18 +43,12 @@
                 <div class="card" data-service="Desenvolvimento de Sites">
                     <h3>DESENVOLVIMENTO DE SITES</h3>
                     <p>Criação de sites responsivos e personalizados para atender às necessidades do seu negócio.</p>
-                </div>
-                <div class="card" data-service="Atualização de Sites">
-                    <h3>ATUALIZAÇÃO DE SITES</h3>
-                    <p>Atualização de sites antigos para modernos e funcionais, garantindo melhor desempenho e usabilidade.</p>
+                    <a class="card-link" href="https://wa.me/5531995584785?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20desenvolvimento%20de%20sites" target="_blank">Saiba mais ➜</a>
                 </div>
                 <div class="card" data-service="Landing Pages Responsivas">
                     <h3>LANDING PAGES RESPONSIVAS</h3>
                     <p>Criação de landing pages responsivas e otimizadas para conversões.</p>
-                </div>
-                <div class="card" data-service="Manutenção e Suporte">
-                    <h3>MANUTENÇÃO E SUPORTE</h3>
-                    <p>Serviços contínuos de manutenção e suporte para garantir que seu site esteja sempre atualizado e funcionando perfeitamente.</p>
+                    <a class="card-link" href="https://wa.me/5531995584785?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20landing%20pages" target="_blank">Saiba mais ➜</a>
                 </div>
             </div>
         </section>
@@ -60,26 +59,26 @@
                 <p>Sou Gabriel Santiago, um desenvolvedor web iniciando minha jornada no mundo da programação.</p>
                 <p>Busco projetos desafiadores que me permitam crescer e aprender com cada experiência. Pretendo melhorar minhas habilidades e entregar soluções inovadoras e eficientes.</p>
                 <p>Estudando desenvolvimento web e tecnologia, sempre buscando novos conhecimentos e aprimorando meus conhecimentos para oferecer soluções inovadoras e eficientes.</p>
+                <h4>Veja meus projetos no github<a class="about-link" href="https://github.com/BlackGhostt6" target="_blank">aqui</a></h4>
+                <h4>Veja meu perfil no LinkedIn<a class="about-link" href="https://www.linkedin.com/in/gabriel-santiago-2558301a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">aqui</a></h4>
             </div>
         </section>
         <section id="contact">
             <div id="contact-text">
-                <h3>Telefone</h3>
+                <h4>Envie sua colicitação pelo formulario ou me chame no Whatsapp para mais informações.</h4>
+                <h3>TELEFONE</h3>
                 <h5>(31) 99558-4785</h5>
-                <h3>Email</h3>
+                <h3>EMAIL</h3>
                 <h5>contato.gabriel276@gmail.com</h5>
-            
             </div>
             <form action="https://formspree.io/f/xpqrdpyb" method="POST">
                 <h2>Contato</h2>
                 <input type="text" id="name" name="nome" required placeholder="Digite seu nome">
                 <input type="email" id="email" name="email" required placeholder="Digite um email para retorno">
                 <select name="Serviço" id="service" required>
-                    <option disabled selected>Selecione o serviço desejado</option>
+                    <option value="" disabled selected>Selecione o serviço desejado</option>
                     <option value="Desenvolvimento de Sites">Desenvolvimento de Sites</option>
-                    <option value="Atualização de Sites">Atualização de Sites</option>
                     <option value="Landing Pages Responsivas">Landing Pages Responsivas</option>
-                    <option value="Manutenção e Suporte">Manutenção e Suporte</option>
                 </select>
                 <textarea id="message" name="mensagem" rows="5" required placeholder="Digite uma mensagem descrevendo o pedido"></textarea>
                 <button type="submit" id="submit">Enviar pedido</button>

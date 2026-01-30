@@ -2,7 +2,7 @@
 
 html{
     scroll-behavior: smooth;
-    scroll-padding: 16vh;
+    scroll-padding: 7vh;
 }
 
 *{box-sizing: border-box;
@@ -11,11 +11,14 @@ html{
 
 :root{
     --bg-color: #000000;
-    --border: rgb(23, 3, 122);
+    --bg2-color: #010311;
+    --bg-card:#051a3b3e;
+    --border: #17037a;
     --font-color: #ffffff;
     --whatsapp-green: #13be5a;
-    --bg2-color: #010311;
-    --input-color:rgba(19, 19, 29, 0.862);
+    --input-color:#13131ddc;
+    --destaque:#2f8dff;
+    --shadow:1px 1px 4px 1px #57c2fb39, 0 0px 20px 0 #36c6ff30;
 }
 
 body{
@@ -29,6 +32,24 @@ body{
     padding-top: 13vh;
 }
 
+.cursor-light{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.04) 30%,
+        rgba(255, 255, 255, 0.01) 50%,
+        transparent 70%
+    );
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
 header{
     display: flex;
     position: fixed;
@@ -40,6 +61,11 @@ header{
     height: 13vh;
     background-color: var(--bg-color);
     z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+header.hide{
+    transform: translateY(-100%)
 }
 
 main{
@@ -60,6 +86,8 @@ footer{
 .icons{
     display: flex;
     flex-direction: row;
+    justify-content: left;
+    width: 100%;
     gap: 1rem;
     padding-top: 1rem;
 }
@@ -83,10 +111,13 @@ nav{
 }
 
 #title{
+    display: flex;
     margin-top: 2%;
     width: 90%;
     font-size: larger;
-    margin-bottom: 10%;
+    margin-bottom:5%;
+    flex-direction: column;
+    align-items: center;
 }
 
 #title h2{
@@ -102,7 +133,6 @@ nav{
     width: 100%;
     gap:1%;
     margin-bottom:7%;
-    padding-top:1%;
 }
 
 #contact{
@@ -127,6 +157,58 @@ nav{
     border: var(--border) solid 1px;
     border-radius: 15px;
     padding: 2rem;
+    background-color: var(--bg-color);
+}
+
+#about h4{
+    font-weight: 300;
+}
+
+.about-link{
+    color: var(--destaque);
+}
+
+.about-link:hover{
+    text-decoration: underline;
+}
+
+#cta{
+    margin-top: 2rem;
+    position: relative;
+    width: 30vw;
+    height: 4rem;
+    border: var(--border) solid 2px;
+    border-radius: 10px;
+    background-color: transparent;
+    overflow: hidden;
+    color: var(--font-color);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: large;
+    transition: color 0.3s ease;
+}
+
+#cta::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+#cta:hover::before{
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+#cta:hover{
+    color: #000000;
+    transform: scale(1.02);
 }
 
 .image{
@@ -145,11 +227,10 @@ nav{
 #contact-text{
     width:40%;
     font-size: larger;
-    text-transform: uppercase;
     margin-left: 5%;
 }
 
-#contact-text h5{
+#contact-text h5, #contact-text h4{
     font-weight: 300;
 }
 
@@ -186,20 +267,43 @@ textarea{
 }
 
 #submit{
+    position: relative;
+    z-index: 1;
     width: 50%;
     height: 2.5rem;
-    border: black solid 1px;
+    border: var(--border) solid 2px;
     border-radius: 10px;
-    background-color: var(--border);
+    background-color: transparent;
     color: var(--font-color);
     font-weight: bold;
     cursor: pointer;
     font-size: medium;
+    overflow: hidden;
+    transition: color 0.3s ease;
 }   
 
+#submit::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    transition: width 0.4s ease;
+    pointer-events: none;
+}
+
+#submit:hover::before{
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
 #submit:hover{
-    background-color: var(--bg-color);
-    border: white solid 1px;
+    color: #000000;
+    border: var(--border) solid 2px;
 }
 
 #services h2{
@@ -246,13 +350,23 @@ textarea{
 
 .card{
     width: 40%;
-    height: 20vh;
     padding-left: 1.3rem;
-    background-color: rgba(5, 26, 59, 0.243);
+    padding-bottom: 1.3rem;
+    background-color: var(--bg-card);
     border-radius: 10px;
     border: var(--border) solid 1px;
-    box-shadow: 1px 1px 4px 1px rgba(87, 194, 251, 0.222), 0 0px 20px 0 rgba(54, 198, 255, 0.19);
+    box-shadow: var(--shadow);
     z-index: 2;
+}
+
+.card-link{
+    color: var(--destaque);
+    margin:0;
+    font-size: large;
+}
+
+.card link:hover{
+    text-decoration: underline;
 }
 
 .card h2, .card p{
@@ -300,12 +414,20 @@ i{
 }
 
 @media (max-width: 768px) {
+    html{
+        scroll-padding: 1vh;
+    }
+
     .card-container{
         flex-direction: column;
         align-items: center;
     }
     .card{
         width: 90%;
+    }
+
+    #cta{
+        width:60%
     }
 
     header{
@@ -315,11 +437,14 @@ i{
         width: 100%;
     }
 
-
     .logo{
         margin-top:1.2rem;
         width:15vw;
         position: absolute;
+    }
+
+    #title{
+        font-size: large;
     }
 
     h1{
@@ -350,6 +475,7 @@ i{
         width: 100%;
         transform: scale(1.15);
         margin-bottom: 5%;
+        margin-right:0
     }
 
     footer{
