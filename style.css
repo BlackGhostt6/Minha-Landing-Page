@@ -118,9 +118,6 @@ footer{
     background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
 }
 
-.teste{
-    position: relative;
-}
 .carousel{
     display: flex;
     gap: 10%;
@@ -217,7 +214,7 @@ nav{
 
 #title{
     display: flex;
-    margin-top: 2%;
+    margin-top: 3rem;
     width: 90%;
     font-size: larger;
     margin-bottom:5%;
@@ -262,6 +259,66 @@ nav{
     border: var(--border) solid 1px;
     border-radius: 15px;
     padding: 2rem;
+}
+
+.thanks{
+    margin-top: 10vh;
+    background-color: var(--bg-card);
+    display: flex;
+    margin-bottom:0;
+    width: 70%;
+    font-size: larger;
+    flex-direction: column;
+    border: var(--border) solid 1px;
+    border-radius: 15px;
+    padding: 2rem;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.thanks h2, .thanks p{
+    margin: 1rem;
+    padding: 0;
+}
+
+#t-button{
+    margin-top: 2rem;
+    position: relative;
+    width: 25%;
+    height: 3.2rem;
+    border: var(--border) solid 2px;
+    border-radius: 10px;
+    background-color: transparent;
+    overflow: hidden;
+    color: var(--font-color);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: large;
+    transition: color 0.3s ease;
+}
+
+
+#t-button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    transition: width 0.4s ease;
+}
+
+#t-button:hover::before{
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+#t-button:hover{
+    color: #000000;
+    transform: scale(1.02);
 }
 
 #about h4{
@@ -520,7 +577,7 @@ i{
 
 @media (max-width: 768px) {
     html{
-        scroll-padding: 1vh;
+        scroll-padding: 2vh;
     }
 
     .card-container{
@@ -549,7 +606,18 @@ i{
     }
 
     #title{
+        margin-top: 0;
         font-size: large;
+    }
+
+    .thanks{
+        width: 80%;
+        height: 50vh;
+    }
+
+
+    #t-button{
+        width: 70%;
     }
 
     h1{

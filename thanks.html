@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Obrigado</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/Logo.png?" type="image/png">
+    <script src="https://kit.fontawesome.com/a3a9f84800.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="thanks">
+        <h2>Entraremos em contato em breve!</h2>
+        <p>Obrigado por enviar seu pedido, clique no botão abaixo para voltar para a página.</p>
+        <button id="t-button">Voltar para a página</button>
+    </div>
+    <script>
+        const thanks = document.getElementById('t-button');
+        thanks.addEventListener('click', () => {
+            window.location.href="https://www.gabrielsantiago.dev.br"
+        });
+    </script>
+</body>
+</html>
