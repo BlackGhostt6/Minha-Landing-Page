@@ -47,7 +47,7 @@ body{
         transparent 70%
     );
     transform: translate(-50%, -50%);
-    z-index: -1;
+    z-index: 2;
 }
 
 header{
@@ -81,6 +81,111 @@ footer{
     color: var(--font-color);
     padding-top: 5%;
     margin-top: 10vh;
+}
+
+#project{
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-container{
+    width: 95%;
+    padding-inline: 10vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carousel-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-color) 0%, transparent 100%);
+}
+
+.carousel-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-color) 0%, transparent 100%);
+}
+
+.teste{
+    position: relative;
+}
+.carousel{
+    display: flex;
+    gap: 10%;
+    flex-direction: row;
+    transition: transform 0.4s ease;
+}
+
+.c-card{
+    width:70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    border-radius: 15px ;
+    border: var(--border) solid 2px;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    box-shadow: var(--shadow);
+    flex-shrink: 0;
+    z-index: 0;
+}
+.c-card a{
+    color: var(--destaque);
+    font-size: large;
+    margin: 0;
+}
+
+.c-link:hover{
+    text-decoration: underline;
+}
+
+.prev, .next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.385);
+    color: var(--font-color);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.prev{
+    left: 0;
+}
+
+.next{
+    right: 0;
+}
+
+.carousel-img{
+    width: 80%;
+    border-radius: 10px;
+}
+
+.c-desc{
+    font-size: large;
+}
+
+.c-desc h5{
+    font-weight: 300;
 }
 
 .icons{
@@ -150,14 +255,13 @@ nav{
 
 #about{
     display: flex;
-    margin-bottom: 5%;
+    margin-bottom:0;
     width: 90%;
     font-size: larger;
     flex-direction: row;
     border: var(--border) solid 1px;
     border-radius: 15px;
     padding: 2rem;
-    background-color: var(--bg-color);
 }
 
 #about h4{
@@ -332,6 +436,7 @@ textarea{
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
+    z-index: 100;
 }
 
 #whatsapp:hover{
@@ -481,6 +586,35 @@ i{
     footer{
         padding-bottom: 3%;
         width: 90%;
+    }
+
+    .c-card{
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .carousel-container{
+        width: 100%;
+        padding-inline: 5vw;
+    }
+    .next, .prev{
+        display: none;
+    }
+
+    .carousel{
+        gap: 2.2rem;
+    }
+
+    .c-desc{
+        font-size: medium;
+    }
+    .carousel-img{
+        width:100%
+    }
+
+    .carousel-container::before, .carousel-container::after{
+        display: none;
     }
 
     #whatsapp{
