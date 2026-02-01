@@ -378,7 +378,7 @@ nav{
     height: 70vh;
     border-radius: 10px;
     border: var(--border) solid 1px;    
-    background-image: url(img/foto.jpg);
+    background-image: url(img/Gabriel.jpg);
     background-size: cover;
     background-position: top;
     user-select: none;
@@ -489,10 +489,8 @@ textarea{
     border-radius: 50%;
     border: none;
     background-color: var(--whatsapp-green);
-    background-image: url(img/whatsapp.png);
-    background-size: 70%;
+    font-size: 1.8rem;
     background-repeat: no-repeat;
-    background-position: center;
     z-index: 100;
 }
 
