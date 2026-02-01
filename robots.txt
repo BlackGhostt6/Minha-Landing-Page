@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.gabrielsantiago.dev.br/sitemap.xml
