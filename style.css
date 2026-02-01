@@ -161,7 +161,7 @@ footer{
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 5px;
-    z-index: 100;
+    z-index: 99;
 }
 
 .prev{
