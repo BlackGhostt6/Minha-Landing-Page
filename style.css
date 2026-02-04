@@ -573,7 +573,7 @@ i{
     transform: scale(1.5);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 599px){
     html{
         scroll-padding: 2vh;
     }
@@ -592,13 +592,12 @@ i{
 
     header{
         justify-content: left;
-        height: auto;
-        padding-bottom: 4.5rem;
         width: 100%;
     }
 
     .logo{
-        margin-top:1.2rem;
+        left:2vw;
+        top: 1rem;
         width:15vw;
         position: absolute;
     }
@@ -619,9 +618,7 @@ i{
     }
 
     h1{
-        position: absolute;
-        left:3vw;
-        margin-top: 3.4rem;
+        top: 4.5vh;
         font-size: 1.4rem;
     }
 
@@ -709,6 +706,101 @@ i{
         width: 90%;
         height: 40vh;
         margin-bottom: 2rem;
+    }
+
+}
+
+@media (max-width: 920px) and (orientation: landscape){
+    .logo{
+        margin-top:0.8rem;
+        width:8vw;
+        position: absolute;
+    }
+    h1{
+        margin-top: 2.5rem
+    }
+    nav{
+        padding-top:1.4%
+    }
+
+    #whatsapp{
+        padding-top:3px
+    }
+
+    .carousel{
+        width:100%
+    }
+
+    body{
+        width: 100%;
+        padding-top: 20vh;
+    }
+    header{
+        width:100%;
+        height: 110px;
+    }
+
+    .text{
+        font-size: medium;
+    }
+    .image{
+        width: 70vw
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait){
+    .logo{
+        top:1vh;
+        width:100px;
+        position: absolute;
+    }
+
+    nav{
+        padding-bottom:1.4%;
+    }
+
+    #whatsapp{
+        padding-top:3px
+    }
+
+    h1{
+        top:1em;
+        padding-inline:20px;
+    }
+    
+    body{
+        width: 100%;
+    }
+    
+    #contact{
+        width:100% 
+    }
+
+    header{
+        flex-direction: row;
+        width:100%;
+        height:13vh
+    }
+
+    .card-container{
+        flex-direction: column;
+    }
+    
+    .card{
+        width: 70vw;
+    }
+
+    .text{
+        font-size: medium;
+    }
+    
+    .image{
+       max-height:45vh
+    }
+
+    #about{
+        flex-direction: column;
     }
 
 }
