@@ -54,11 +54,11 @@ header{
     display: flex;
     position: fixed;
     top: 0;
-    flex-direction: row-reverse;
+    flex-direction: row;
     border-bottom: var(--border) solid 2px;
     width: 100%;
     box-shadow: 1px 1px 4px 1px rgba(87, 194, 251, 0.222), 0 0px 20px 0 rgba(54, 198, 255, 0.19);
-    height: 13vh;
+    height: fit-content;
     background-color: var(--bg-color);
     z-index: 100;
     transition: transform 0.3s ease;
@@ -81,6 +81,13 @@ footer{
     color: var(--font-color);
     padding-top: 5%;
     margin-top: 10vh;
+}
+
+#title-desc{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
 
 #project{
@@ -207,9 +214,10 @@ footer{
 }
 
 nav{
+    position: absolute;
+    right:10px;
     padding-top: 1.5%;
     font-size: larger;
-    margin-right: 2rem;
 }
 
 #title{
@@ -481,6 +489,9 @@ textarea{
 }
 
 #whatsapp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position:fixed;
     bottom: 4%;
     right: 2%;
@@ -490,7 +501,6 @@ textarea{
     border: none;
     background-color: var(--whatsapp-green);
     font-size: 1.8rem;
-    background-repeat: no-repeat;
     z-index: 100;
 }
 
@@ -544,19 +554,8 @@ textarea{
     margin-left: 1rem;
 }
 
-.logo{
-    width:5vw;
-    margin-top: 0.2rem;
-    position: absolute;
-    left:1vw;
-}
-
-h1{
-    color: var(--font-color);
-    margin-left: 5rem;
-    margin-right: 1rem;
-    position: absolute;
-    left:3vw
+#logo{
+    width:6vw;
 }
 
 a{
@@ -573,9 +572,17 @@ i{
     transform: scale(1.5);
 }
 
+h1{
+    font-size: 2rem;
+}
+
 @media (max-width: 599px){
     html{
         scroll-padding: 2vh;
+    }
+
+    #title-desc{
+        margin-top: 1.8rem;
     }
 
     .card-container{
@@ -593,13 +600,11 @@ i{
     header{
         justify-content: left;
         width: 100%;
+        height: fit-content;
     }
 
-    .logo{
-        left:2vw;
-        top: 1rem;
+    #logo{
         width:15vw;
-        position: absolute;
     }
 
     #title{
@@ -618,11 +623,11 @@ i{
     }
 
     h1{
-        top: 4.5vh;
         font-size: 1.4rem;
     }
 
     nav{
+        left:2px;
         display: flex;
         gap:2px;
         flex-direction: row;
@@ -684,7 +689,7 @@ i{
         width: 60px;
         height: 60px;
         right:5%;
-        bottom:6%;
+        bottom:4.5%;
     }
 
     .links:hover{
@@ -712,19 +717,11 @@ i{
 
 @media (max-width: 920px) and (orientation: landscape){
     .logo{
-        margin-top:0.8rem;
         width:8vw;
-        position: absolute;
-    }
-    h1{
-        margin-top: 2.5rem
-    }
-    nav{
-        padding-top:1.4%
     }
 
-    #whatsapp{
-        padding-top:3px
+    nav{
+        padding-top:1.4%
     }
 
     .carousel{
@@ -737,7 +734,6 @@ i{
     }
     header{
         width:100%;
-        height: 110px;
     }
 
     .text{
@@ -750,37 +746,74 @@ i{
 }
 
 @media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait){
-    .logo{
+    #logo{
         top:1vh;
-        width:100px;
-        position: absolute;
+        width:12vw;
+    }
+
+    #title-desc{
+        margin-top:1.5rem
     }
 
     nav{
-        padding-bottom:1.4%;
+        left:2px
     }
 
     #whatsapp{
-        padding-top:3px
+        right: 4%
+    }
+
+    .carousel-container{
+        width: 100%
+    }
+    .carousel{
+        width: 95%;
+    }
+
+    .c-card{
+        width: 75vw;
+    }
+
+    .carousel-img{
+        width: 100%;
+    }
+
+    .carousel-container::before, .carousel-container::after{
+        display: none;
+    }
+
+    .next, .prev{
+        display:none
     }
 
     h1{
         top:1em;
-        padding-inline:20px;
     }
     
     body{
         width: 100%;
     }
     
-    #contact{
-        width:100% 
+   #contact{
+        flex-direction: column;
+        height: auto;
+    }
+
+    #contact-text{
+        width: 90%;
+        text-align: center;
+    }
+
+    form{
+        width: 90%;
+        transform: scale(1.15);
+        margin-bottom: 5%;
+        margin-right:0
     }
 
     header{
         flex-direction: row;
         width:100%;
-        height:13vh
     }
 
     .card-container{
@@ -791,10 +824,8 @@ i{
         width: 70vw;
     }
 
-    .text{
-        font-size: medium;
-    }
-    
+    #contact
+
     .image{
        max-height:45vh
     }
