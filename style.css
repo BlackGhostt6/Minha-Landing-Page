@@ -269,6 +269,7 @@ nav{
     padding: 2rem;
 }
 
+
 .thanks{
     margin-top: 10vh;
     background-color: var(--bg-card);
@@ -382,13 +383,13 @@ nav{
 
 .image{
     margin-right: 5%;
-    width: 100%;
+    width:30%;
     height: 70vh;
     border-radius: 10px;
     border: var(--border) solid 1px;    
-    background-image: url(img/Gabriel.jpg);
+    background-image: url(img/perfil.png);
     background-size: cover;
-    background-position: top;
+    background-position: center 25%;
     user-select: none;
     pointer-events: none;
 }
@@ -529,6 +530,10 @@ textarea{
     z-index: 2;
 }
 
+.card i{
+    padding-top: 3%;
+}
+
 .card-link{
     color: var(--destaque);
     margin:0;
@@ -574,6 +579,10 @@ i{
 
 h1{
     font-size: 2rem;
+}
+
+.text{
+    width: 60%;
 }
 
 @media (max-width: 599px){
@@ -708,9 +717,13 @@ h1{
     }
 
     .image{
-        width: 90%;
+        width: 100%;
         height: 40vh;
         margin-bottom: 2rem;
+    }
+
+    .text{
+        width: 100%;
     }
 
 }
@@ -738,6 +751,7 @@ h1{
 
     .text{
         font-size: medium;
+        width: 100%;
     }
     .image{
         width: 70vw
@@ -832,6 +846,10 @@ h1{
 
     #about{
         flex-direction: column;
+    }
+
+    .text{
+        width: 100%;
     }
 
 }
