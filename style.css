@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px var(--pulse-color);
+  }
+  50% {
+    box-shadow: 0 0 27px var(--pulse-color);
+  }
+  100% {
+    box-shadow: 0 0 10px var(--pulse-color);
+  }
+}
 
 html{
     scroll-behavior: smooth;
@@ -12,13 +23,15 @@ html{
 :root{
     --bg-color: #000000;
     --bg2-color: #010311;
-    --bg-card:#051a3b3e;
-    --border: #17037a;
+    --bg-card:#03030a;
+    --border: #1d4ed8;
+    --pulse-color: #215dbd9b;
     --font-color: #ffffff;
     --whatsapp-green: #13be5a;
     --input-color:#13131ddc;
     --destaque:#2f8dff;
     --shadow:1px 1px 4px 1px #57c2fb39, 0 0px 20px 0 #36c6ff30;
+
 }
 
 body{
@@ -503,11 +516,12 @@ textarea{
     background-color: var(--whatsapp-green);
     font-size: 1.8rem;
     z-index: 100;
+    transition: all 0.05s ease;
 }
 
 #whatsapp:hover{
     cursor: pointer;
-    transform: scale(1.05);
+    transform: translateY(-3px);
 }
 
 .card-container{
@@ -524,9 +538,9 @@ textarea{
     padding-left: 1.3rem;
     padding-bottom: 1.3rem;
     background-color: var(--bg-card);
-    border-radius: 10px;
+    border-radius: 12px;
     border: var(--border) solid 1px;
-    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
     z-index: 2;
 }
 
@@ -550,13 +564,15 @@ textarea{
 }
 
 .card:hover{
-    transform: scale(1.05);
-    transition: all 0.07s ease-in-out;
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
     z-index: 2;
+    cursor: pointer;
 }
 
 .links{
     margin-left: 1rem;
+    position: relative;
 }
 
 #logo{
@@ -569,8 +585,19 @@ a{
     margin:0.5rem;
 }
 
-.links:hover{
-    color: var(--border);
+.links::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom:-1px;
+    width: 0;
+    height:2px;
+    background-color: var(--border);
+    transition: width 0.2s ease;
+}
+
+.links:hover::after{
+    width:100%
 }
 
 i{
@@ -583,6 +610,16 @@ h1{
 
 .text{
     width: 60%;
+}
+
+.card i{
+    color: var(--border);
+}
+
+@media(hover:none){
+    .card{
+        animation: pulse 2s infinite;               
+    }
 }
 
 @media (max-width: 599px){

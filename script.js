@@ -31,6 +31,18 @@ document.addEventListener("mousemove", (e) => {
     light.style.top = e.clientY + "px";
 });
 
+document.addEventListener("touchmove", (e) => {
+    const touch = e.touches[0];
+    light.style.left = touch.clientX + "px";
+    light.style.top = touch.clientY + "px";
+}, { passive: true });
+
+document.addEventListener("touchstart", (e) => {
+    const touch = e.touches[0];
+    light.style.left = touch.clientX + "px";
+    light.style.top = touch.clientY + "px";
+});
+
 const carousel = document.querySelector('.carousel');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
