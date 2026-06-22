@@ -213,6 +213,7 @@ footer{
     width: 100%;
     gap: 1rem;
     padding-top: 1rem;
+    flex-wrap: wrap;
 }
 
 .icons img{
@@ -606,7 +607,7 @@ i{
 }
 
 h1{
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .text{
@@ -656,7 +657,12 @@ h1{
 
     #title{
         margin-top: 0;
-        font-size: large;
+        font-size: medium;
+    }
+
+    #title h2{
+        margin-top: 9%;
+        font-size: x-large;
     }
 
     .thanks{
@@ -670,7 +676,7 @@ h1{
     }
 
     h1{
-        font-size: 1.4rem;
+        font-size: 1.1rem;
     }
 
     nav{
@@ -795,9 +801,13 @@ h1{
         width: 70vw
     }
 
+    #title-desc{
+        padding-top: 2.6%;
+    }
+
 }
 
-@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait){
+@media (min-width: 600px) and (max-width: 1024px){
     #logo{
         top:1vh;
         width:12vw;
@@ -839,7 +849,7 @@ h1{
     }
 
     h1{
-        top:1em;
+        margin-left: 8% ;
     }
     
     body{
@@ -876,10 +886,9 @@ h1{
         width: 70vw;
     }
 
-    #contact
-
     .image{
-       max-height:45vh
+       height: 50vh;
+       width: 100%;
     }
 
     #about{
@@ -888,6 +897,10 @@ h1{
 
     .text{
         width: 100%;
+    }
+
+    #about{
+        flex-direction: row;
     }
 
 }
