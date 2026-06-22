@@ -48,7 +48,7 @@ const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
 let scrollAmount = 0;
-const cardWidth = 550;
+const cardWidth = 750;
 
 next.addEventListener('click', () => {
   scrollAmount += cardWidth;

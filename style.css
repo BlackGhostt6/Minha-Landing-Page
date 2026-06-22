@@ -100,6 +100,7 @@ footer{
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 1%;
 
 }
 
@@ -228,8 +229,8 @@ footer{
 
 nav{
     position: absolute;
-    right:10px;
-    padding-top: 1.5%;
+    right:2%;
+    padding-top: 1.9%;
     font-size: larger;
 }
 
