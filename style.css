@@ -418,8 +418,7 @@ nav{
     margin-right: 5%;
     width:30%;
     height: 70vh;
-    border-radius: 10px;
-    border: var(--border) solid 1px;    
+    border-radius: 10px;   
     background-image: url(img/perfil.png);
     background-size: cover;
     background-position: center 25%;
@@ -782,7 +781,6 @@ h1{
         align-items: center;
         text-align: left;
         width: 90%;
-        border: var(--border) solid 1px;
         border-radius: 15px;
         padding: 2rem;
         font-size: medium;
