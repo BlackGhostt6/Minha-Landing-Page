@@ -21,26 +21,31 @@ html{
 }
 
 :root{
-    --bg-color: #000000;
-    --bg2-color: #010311;
-    --bg-card:#03030a;
-    --border: #1d4ed8;
-    --pulse-color: #215dbd9b;
-    --font-color: #ffffff;
-    --whatsapp-green: #13be5a;
-    --input-color:#13131ddc;
-    --destaque:#2f8dff;
-    --shadow:1px 1px 4px 1px #57c2fb39, 0 0px 20px 0 #36c6ff30;
-
+    --bg-color: #060816;
+    --bg2-color: #0c1427;
+    --bg-card: rgba(9, 15, 29, 0.95);
+    --border: #4f8cff;
+    --border-soft: rgba(79, 140, 255, 0.22);
+    --pulse-color: rgba(79, 140, 255, 0.45);
+    --font-color: #f5f7ff;
+    --muted-color: #9aa8c3;
+    --whatsapp-green: #25d366;
+    --input-color: rgba(255,255,255,0.06);
+    --destaque:#6ca8ff;
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+    --radius-lg: 20px;
+    --radius-md: 14px;
 }
 
 body{
     font-family: 'Nunito', sans-serif;
-    background-color: var(--bg-color);
+    background: radial-gradient(circle at top, rgba(79,140,255,0.16), transparent 35%), var(--bg-color);
+    color: var(--font-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    min-height: 100vh;
     margin: 0;
     padding-top: 13vh;
 }
@@ -72,7 +77,8 @@ header{
     width: 100%;
     box-shadow: 1px 1px 4px 1px rgba(87, 194, 251, 0.222), 0 0px 20px 0 rgba(54, 198, 255, 0.19);
     height: fit-content;
-    background-color: var(--bg-color);
+    background: rgba(6, 8, 22, 0.562);
+    backdrop-filter: blur(16px);
     z-index: 100;
     transition: transform 0.3s ease;
 }
@@ -92,8 +98,8 @@ main{
 footer{
     text-align: center;
     color: var(--font-color);
-    padding-top: 5%;
-    margin-top: 10vh;
+    padding: 2rem 1rem 3rem;
+    margin-top: 8vh;
 }
 
 #title-desc{
@@ -109,11 +115,12 @@ footer{
     font-size: 2rem;
     margin: 0;
     padding: 0;
+    letter-spacing: 0.08em;
 }
 
 .carousel-container{
     width: 95%;
-    padding-inline: 10vw;
+    padding-inline: 4rem;
     position: relative;
     overflow: hidden;
 }
@@ -124,7 +131,7 @@ footer{
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 15%;
+    width: 12%;
     pointer-events: none;
     z-index: 1;
 }
@@ -141,22 +148,22 @@ footer{
 
 .carousel{
     display: flex;
-    gap: 10%;
+    gap: 2rem;
     flex-direction: row;
     transition: transform 0.4s ease;
 }
 
 .c-card{
-    width:70%;
+    width: min(70%, 520px);
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0;
-    border-radius: 15px ;
-    border: var(--border) solid 2px;
+    align-items: flex-start;
+    gap: 0.8rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
     padding: 1.5rem;
-    background-color: var(--bg-card);
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
     box-shadow: var(--shadow);
     flex-shrink: 0;
     z-index: 0;
@@ -175,26 +182,27 @@ footer{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.385);
+    background: rgba(6, 8, 22, 0.85);
     color: var(--font-color);
-    border: none;
-    font-size: 2rem;
+    border: 1px solid var(--border-soft);
+    font-size: 1.4rem;
     cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 8px 12px;
+    border-radius: 999px;
     z-index: 99;
+    box-shadow: var(--shadow);
 }
 
 .prev{
-    left: 0;
+    left: 0.4rem;
 }
 
 .next{
-    right: 0;
+    right: 0.4rem;
 }
 
 .carousel-img{
-    width: 80%;
+    width: 100%;
     border-radius: 10px;
 }
 
@@ -238,11 +246,16 @@ nav{
 #title{
     display: flex;
     margin-top: 3rem;
-    width: 90%;
+    width: min(90%, 1100px);
     font-size: larger;
     margin-bottom:5%;
     flex-direction: column;
     align-items: center;
+    padding: 2.5rem;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    box-shadow: var(--shadow);
 }
 
 #title h2{
@@ -266,22 +279,26 @@ nav{
     align-items: center;
     width: 100%;
     gap:1%;
-    border-bottom: var(--border) solid 2px;
-     border-top: var(--border) solid 2px;
-    background-color: var(--bg2-color);
+    border: 1px solid var(--border-soft);
+    border-left: none;
+    border-right: none;
+    background: linear-gradient(135deg, rgba(12,20,39,0.95), rgba(6,8,22,0.95));
     padding: 2rem;
-    height: auto;   
+    height: auto;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 #about{
     display: flex;
     margin-bottom:0;
-    width: 90%;
+    width: min(90%, 1100px);
     font-size: larger;
     flex-direction: row;
-    border: var(--border) solid 1px;
-    border-radius: 15px;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
     padding: 2rem;
+    background: linear-gradient(135deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+    box-shadow: var(--shadow);
 }
 
 
@@ -310,15 +327,15 @@ nav{
     position: relative;
     width: 25%;
     height: 3.2rem;
-    border: var(--border) solid 2px;
-    border-radius: 10px;
-    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(79,140,255,0.19), rgba(79,140,255,0.08));
     overflow: hidden;
     color: var(--font-color);
     font-weight: bold;
     cursor: pointer;
     font-size: large;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 
@@ -360,17 +377,18 @@ nav{
 #cta{
     margin-top: 2rem;
     position: relative;
-    width: 30vw;
+    width: min(30vw, 280px);
     height: 4rem;
-    border: var(--border) solid 2px;
-    border-radius: 10px;
-    background-color: transparent;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(79,140,255,0.18), rgba(79,140,255,0.08));
     overflow: hidden;
     color: var(--font-color);
     font-weight: bold;
     cursor: pointer;
     font-size: large;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 12px 30px rgba(79, 140, 255, 0.16);
 }
 
 #cta::before{
@@ -427,44 +445,48 @@ form{
     width: 60%;
     text-transform: uppercase;
     margin-right: 5%;
+    padding: 1.4rem;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    background: rgba(255,255,255,0.03);
 }
 
-
-
 input, select{
-    border-radius: 5px;
-    border: none;
-    padding-left: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding-left: 0.8rem;
     width: 90%;
-    height: 2rem;
+    height: 2.5rem;
     background-color: var(--input-color);
+    outline: none;
 }
 
 textarea{
     background-color: var(--input-color);
-    border-radius: 5px;
-    border: none;
-    padding-left: 0.5rem;
-    padding-top: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.08);
+    padding-left: 0.8rem;
+    padding-top: 0.7rem;
     width: 90%;
     height: 5rem;
     resize: none;
+    outline: none;
 }
 
 #submit{
     position: relative;
     z-index: 1;
     width: 50%;
-    height: 2.5rem;
-    border: var(--border) solid 2px;
-    border-radius: 10px;
-    background-color: transparent;
+    height: 2.7rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(79,140,255,0.2), rgba(79,140,255,0.08));
     color: var(--font-color);
     font-weight: bold;
     cursor: pointer;
     font-size: medium;
     overflow: hidden;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }   
 
 #submit::before{
@@ -502,6 +524,7 @@ textarea{
     margin-bottom: 2rem;
     margin-top: 0;
     font-weight: normal;
+    color: var(--muted-color);
 }
 
 #whatsapp{
@@ -514,11 +537,12 @@ textarea{
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border: none;
-    background-color: var(--whatsapp-green);
+    border: 1px solid rgba(255,255,255,0.16);
+    background: linear-gradient(135deg, var(--whatsapp-green), #1ebc5b);
     font-size: 1.8rem;
     z-index: 100;
-    transition: all 0.05s ease;
+    transition: all 0.2s ease;
+    box-shadow: 0 14px 30px rgba(37, 211, 102, 0.28);
 }
 
 #whatsapp:hover{
@@ -536,14 +560,14 @@ textarea{
 }
 
 .card{
-    width: 40%;
-    padding-left: 1.3rem;
-    padding-bottom: 1.3rem;
-    background-color: var(--bg-card);
-    border-radius: 12px;
-    border: var(--border) solid 1px;
+    width: min(40%, 420px);
+    padding: 1.4rem;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-soft);
     transition: all 0.3s ease;
     z-index: 2;
+    box-shadow: var(--shadow);
 }
 
 .card i{
@@ -627,6 +651,7 @@ h1{
 @media (max-width: 599px){
     html{
         scroll-padding: 2vh;
+        font-size: small;
     }
 
     #title-desc{
@@ -649,6 +674,7 @@ h1{
         justify-content: left;
         width: 100%;
         height: fit-content;
+        padding: 10px;
     }
 
     #logo{
@@ -685,6 +711,7 @@ h1{
         gap:2px;
         flex-direction: row;
         font-size: small;
+        padding: 0 8px;
     }
 
     #contact{
@@ -698,9 +725,10 @@ h1{
     }
 
     form{
-        width: 100%;
+        width: 90%;
         transform: scale(1.15);
         margin-bottom: 5%;
+        margin-top: 8%;
         margin-right:0
     }
 
@@ -793,6 +821,10 @@ h1{
         width:100%;
     }
 
+    form{
+        margin-top: 8%;
+    }
+
     .text{
         font-size: medium;
         width: 100%;
@@ -870,7 +902,8 @@ h1{
         width: 90%;
         transform: scale(1.15);
         margin-bottom: 5%;
-        margin-right:0
+        margin-right:0;
+        margin-top: 8%;
     }
 
     header{

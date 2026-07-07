@@ -90,10 +90,10 @@ carousel.addEventListener('touchend', (e) => {
   const minSwipeDistance = 50;
   
   if (dragOffset > minSwipeDistance) {
-    scrollAmount -= cardWidth;
+    scrollAmount -= cardWidth-380;
     if(scrollAmount < 0) scrollAmount = 0;
   } else if (dragOffset < -minSwipeDistance) {
-    scrollAmount += cardWidth;
+    scrollAmount += cardWidth-380;
     if(scrollAmount > (carousel.scrollWidth - carousel.clientWidth)) {
       scrollAmount = carousel.scrollWidth - carousel.clientWidth;
     }
