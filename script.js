@@ -46,53 +46,30 @@ document.addEventListener("touchstart", (e) => {
     light.style.top = touch.clientY + "px";
 });
 
-const carousel = document.querySelector('.carousel');
 const carouselContainer = document.querySelector('.carousel-container');
-const prev = document.querySelector('.prev');
-const next = document.querySelector('.next');
-
-let scrollAmount = 0;
-const getMaxScroll = () => Math.max(0, carousel.scrollWidth - carousel.clientWidth);
-
-function setCarouselPosition(position, animate = true) {
-  scrollAmount = Math.max(0, Math.min(position, getMaxScroll()));
-  carousel.style.transition = animate ? '' : 'none';
-  carousel.style.transform = `translateX(-${scrollAmount}px)`;
-}
-
-function moveByCard(direction) {
-  const firstCard = carousel.querySelector('.c-card');
-  if (!firstCard) return;
-
-  const gap = parseFloat(getComputedStyle(carousel).gap) || 0;
-  setCarouselPosition(scrollAmount + direction * (firstCard.getBoundingClientRect().width + gap));
-}
-
-next.addEventListener('click', () => moveByCard(1));
-prev.addEventListener('click', () => moveByCard(-1));
 
 let pointerStartX = 0;
 let dragStartScroll = 0;
-let activePointerId = null;
+let isDragging = false;
 let hasDragged = false;
 let suppressClickUntil = 0;
 
 carouselContainer.addEventListener('pointerdown', (event) => {
   if (
     !event.isPrimary ||
-    (event.pointerType === 'mouse' && event.button !== 0) ||
-    event.target.closest('button, a')
+    event.pointerType !== 'mouse' ||
+    event.button !== 0
   ) return;
 
-  activePointerId = event.pointerId;
+  isDragging = true;
   pointerStartX = event.clientX;
-  dragStartScroll = scrollAmount;
+  dragStartScroll = carouselContainer.scrollLeft;
   hasDragged = false;
   carouselContainer.setPointerCapture(event.pointerId);
 });
 
 carouselContainer.addEventListener('pointermove', (event) => {
-  if (event.pointerId !== activePointerId) return;
+  if (!isDragging) return;
 
   const dragOffset = event.clientX - pointerStartX;
   if (Math.abs(dragOffset) > 4) {
@@ -100,16 +77,15 @@ carouselContainer.addEventListener('pointermove', (event) => {
     carouselContainer.classList.add('is-dragging');
   }
 
-  if (hasDragged) setCarouselPosition(dragStartScroll - dragOffset, false);
+  if (hasDragged) carouselContainer.scrollLeft = dragStartScroll - dragOffset;
 });
 
 function finishDrag(event) {
-  if (event.pointerId !== activePointerId) return;
+  if (!isDragging) return;
 
   if (hasDragged) suppressClickUntil = Date.now() + 250;
-  activePointerId = null;
+  isDragging = false;
   carouselContainer.classList.remove('is-dragging');
-  setCarouselPosition(scrollAmount);
 }
 
 carouselContainer.addEventListener('pointerup', finishDrag);
@@ -128,14 +104,18 @@ carouselContainer.addEventListener('wheel', (event) => {
   const multiplier = event.deltaMode === WheelEvent.DOM_DELTA_LINE
     ? 16
     : event.deltaMode === WheelEvent.DOM_DELTA_PAGE
-      ? carousel.clientWidth
+      ? carouselContainer.clientWidth
       : 1;
-  const nextPosition = Math.max(0, Math.min(scrollAmount + delta * multiplier, getMaxScroll()));
+  const nextPosition = carouselContainer.scrollLeft + delta * multiplier;
 
-  if (nextPosition !== scrollAmount) {
+  if (
+    nextPosition > carouselContainer.scrollLeft &&
+    carouselContainer.scrollLeft < carouselContainer.scrollWidth - carouselContainer.clientWidth
+  ) {
     event.preventDefault();
-    setCarouselPosition(nextPosition);
+    carouselContainer.scrollLeft = nextPosition;
+  } else if (nextPosition < carouselContainer.scrollLeft && carouselContainer.scrollLeft > 0) {
+    event.preventDefault();
+    carouselContainer.scrollLeft = nextPosition;
   }
 }, { passive: false });
-
-window.addEventListener('resize', () => setCarouselPosition(scrollAmount));
